@@ -33,7 +33,7 @@
             this.btnMarcarTodos = new System.Windows.Forms.Button();
             this.btnDesmarcarTodos = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt = new System.Windows.Forms.TextBox();
+            this.txtPorcentagem = new System.Windows.Forms.TextBox();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
@@ -111,12 +111,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Alteração do Preço (%)";
             // 
-            // txt
+            // txtPorcentagem
             // 
-            this.txt.Location = new System.Drawing.Point(222, 457);
-            this.txt.Name = "txt";
-            this.txt.Size = new System.Drawing.Size(100, 20);
-            this.txt.TabIndex = 5;
+            this.txtPorcentagem.Location = new System.Drawing.Point(222, 457);
+            this.txtPorcentagem.Name = "txtPorcentagem";
+            this.txtPorcentagem.Size = new System.Drawing.Size(100, 20);
+            this.txtPorcentagem.TabIndex = 5;
             // 
             // btnAlterar
             // 
@@ -128,6 +128,7 @@
             this.btnAlterar.TabIndex = 6;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnLimpar
             // 
@@ -215,7 +216,7 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnAlterar);
-            this.Controls.Add(this.txt);
+            this.Controls.Add(this.txtPorcentagem);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDesmarcarTodos);
             this.Controls.Add(this.btnMarcarTodos);
@@ -236,7 +237,7 @@
         private System.Windows.Forms.Button btnMarcarTodos;
         private System.Windows.Forms.Button btnDesmarcarTodos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt;
+        private System.Windows.Forms.TextBox txtPorcentagem;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnClose;

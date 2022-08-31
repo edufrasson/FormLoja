@@ -52,5 +52,16 @@ namespace FormLoja
             }         
                        
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            double porcentagem = double.Parse(txtPorcentagem.Text) / 100;
+
+            foreach(DataGridViewRow row in dgvProdutos.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[0].Value) == true)
+                    row.Cells[5].Value = Convert.ToDouble(row.Cells[5].Value) + (Convert.ToDouble(row.Cells[5].Value) * porcentagem);
+            }
+        }
     }
 }
