@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,41 @@ namespace FormLoja
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void btnImportar_Click(object sender, EventArgs e)
+        {
+            dgvProdutos.RowCount = 0;
+
+            ofdProdutos.FileName = "";
+            ofdProdutos.ShowDialog();
+
+            StreamReader arquivo = File.OpenText(ofdProdutos.FileName);
+
+            String linha;
+
+            while((linha = arquivo.ReadLine()) != null)
+            {
+                string[] data = linha.Split(';');
+                dgvProdutos.Rows.Add(false, data[0], data[1], data[2], data[3], data[4], data[5]);
+            }
+        }
+
+        private void dgvProdutos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvProdutos.Rows.Count > 0 && e.ColumnIndex == 0)
+            {
+                if (Convert.ToBoolean(dgvProdutos.CurrentRow.Cells[0].Value) == false)
+                {
+                    dgvProdutos.CurrentRow.Cells[0].Value = true;
+                    
+                }
+                else
+                {
+                    dgvProdutos.CurrentRow.Cells[0].Value = false;
+                }
+            }         
+                       
         }
     }
 }
