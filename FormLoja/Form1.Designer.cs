@@ -90,6 +90,7 @@
             this.btnMarcarTodos.TabIndex = 2;
             this.btnMarcarTodos.Text = "Marcar Todos";
             this.btnMarcarTodos.UseVisualStyleBackColor = true;
+            this.btnMarcarTodos.Click += new System.EventHandler(this.btnMarcarTodos_Click);
             // 
             // btnDesmarcarTodos
             // 
@@ -100,6 +101,7 @@
             this.btnDesmarcarTodos.TabIndex = 3;
             this.btnDesmarcarTodos.Text = "Desmarcar Todos";
             this.btnDesmarcarTodos.UseVisualStyleBackColor = true;
+            this.btnDesmarcarTodos.Click += new System.EventHandler(this.btnDesmarcarTodos_Click);
             // 
             // label1
             // 
@@ -163,6 +165,7 @@
             this.btnExcluirSelecionados.TabIndex = 9;
             this.btnExcluirSelecionados.Text = "Excluir Selecionados";
             this.btnExcluirSelecionados.UseVisualStyleBackColor = true;
+            this.btnExcluirSelecionados.Click += new System.EventHandler(this.btnExcluirSelecionados_Click);
             // 
             // colCheckBox
             // 

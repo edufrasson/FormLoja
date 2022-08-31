@@ -60,7 +60,37 @@ namespace FormLoja
             foreach(DataGridViewRow row in dgvProdutos.Rows)
             {
                 if (Convert.ToBoolean(row.Cells[0].Value) == true)
+                { 
                     row.Cells[5].Value = Convert.ToDouble(row.Cells[5].Value) + (Convert.ToDouble(row.Cells[5].Value) * porcentagem);
+               
+                    if (Convert.ToDouble(row.Cells[5].Value) < Convert.ToDouble(row.Cells[4].Value))
+                        row.DefaultCellStyle.ForeColor = Color.Red;
+                    else
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                }
+            }
+        }
+
+        private void btnMarcarTodos_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvProdutos.Rows)
+                row.Cells[0].Value = true;
+        }
+
+        private void btnDesmarcarTodos_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvProdutos.Rows)
+                row.Cells[0].Value = false;
+        }
+
+        private void btnExcluirSelecionados_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dgvProdutos.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells[0].Value) == true)
+                {
+                    dgvProdutos.Rows.RemoveAt(row.Index);
+                }
             }
         }
     }
