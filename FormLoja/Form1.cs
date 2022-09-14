@@ -93,5 +93,15 @@ namespace FormLoja
                 }
             }
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            dgvProdutos.Rows.Clear();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

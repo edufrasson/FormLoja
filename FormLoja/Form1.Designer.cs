@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvProdutos = new System.Windows.Forms.DataGridView();
+            this.colCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEan = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnImportar = new System.Windows.Forms.Button();
             this.btnMarcarTodos = new System.Windows.Forms.Button();
             this.btnDesmarcarTodos = new System.Windows.Forms.Button();
@@ -39,13 +46,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.ofdProdutos = new System.Windows.Forms.OpenFileDialog();
             this.btnExcluirSelecionados = new System.Windows.Forms.Button();
-            this.colCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValorCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colValorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEstoque = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProdutos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,6 +69,49 @@
             this.dgvProdutos.Size = new System.Drawing.Size(757, 300);
             this.dgvProdutos.TabIndex = 0;
             this.dgvProdutos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProdutos_CellClick);
+            // 
+            // colCheckBox
+            // 
+            this.colCheckBox.HeaderText = "OK";
+            this.colCheckBox.Name = "colCheckBox";
+            this.colCheckBox.ReadOnly = true;
+            this.colCheckBox.Width = 40;
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "ID";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            // 
+            // colEan
+            // 
+            this.colEan.HeaderText = "EAN";
+            this.colEan.Name = "colEan";
+            this.colEan.ReadOnly = true;
+            // 
+            // colNome
+            // 
+            this.colNome.HeaderText = "Nome Do Produto";
+            this.colNome.Name = "colNome";
+            this.colNome.ReadOnly = true;
+            // 
+            // colValorCompra
+            // 
+            this.colValorCompra.HeaderText = "Valor de Compra";
+            this.colValorCompra.Name = "colValorCompra";
+            this.colValorCompra.ReadOnly = true;
+            // 
+            // colValorVenda
+            // 
+            this.colValorVenda.HeaderText = "Valor de Venda";
+            this.colValorVenda.Name = "colValorVenda";
+            this.colValorVenda.ReadOnly = true;
+            // 
+            // colEstoque
+            // 
+            this.colEstoque.HeaderText = "Estoque";
+            this.colEstoque.Name = "colEstoque";
+            this.colEstoque.ReadOnly = true;
             // 
             // btnImportar
             // 
@@ -141,6 +184,7 @@
             this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "Limpar Dados";
             this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnClose
             // 
@@ -151,6 +195,7 @@
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "Fechar";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // ofdProdutos
             // 
@@ -166,49 +211,6 @@
             this.btnExcluirSelecionados.Text = "Excluir Selecionados";
             this.btnExcluirSelecionados.UseVisualStyleBackColor = true;
             this.btnExcluirSelecionados.Click += new System.EventHandler(this.btnExcluirSelecionados_Click);
-            // 
-            // colCheckBox
-            // 
-            this.colCheckBox.HeaderText = "OK";
-            this.colCheckBox.Name = "colCheckBox";
-            this.colCheckBox.ReadOnly = true;
-            this.colCheckBox.Width = 40;
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "ID";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            // 
-            // colEan
-            // 
-            this.colEan.HeaderText = "EAN";
-            this.colEan.Name = "colEan";
-            this.colEan.ReadOnly = true;
-            // 
-            // colNome
-            // 
-            this.colNome.HeaderText = "Nome Do Produto";
-            this.colNome.Name = "colNome";
-            this.colNome.ReadOnly = true;
-            // 
-            // colValorCompra
-            // 
-            this.colValorCompra.HeaderText = "Valor de Compra";
-            this.colValorCompra.Name = "colValorCompra";
-            this.colValorCompra.ReadOnly = true;
-            // 
-            // colValorVenda
-            // 
-            this.colValorVenda.HeaderText = "Valor de Venda";
-            this.colValorVenda.Name = "colValorVenda";
-            this.colValorVenda.ReadOnly = true;
-            // 
-            // colEstoque
-            // 
-            this.colEstoque.HeaderText = "Estoque";
-            this.colEstoque.Name = "colEstoque";
-            this.colEstoque.ReadOnly = true;
             // 
             // Form1
             // 
